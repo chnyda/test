@@ -93,8 +93,11 @@ class Core(object):
         for klass in entity.classes.as_list():
             if klass not in seen:
                 try:
+                    print "hell1"
                     class_entity = self._storage.get_class(klass)
                 except ClassNotFound, e:
+		    print "debuig"
+                    print self._ignore_class_notfound
                     if self._ignore_class_notfound:
                         continue
                     e.set_nodename(nodename)
